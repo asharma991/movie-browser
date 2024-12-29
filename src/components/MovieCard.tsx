@@ -6,10 +6,9 @@ const MovieCards = ({ movies }: MovieCardsProps) => {
   const [filteredMovies, setFilteredMovies] = useState(movies);
 
   useEffect(() => {
-    const favourites = JSON.parse(localStorage.getItem('favourites')) ?? [];
-    console.log({ favourites });
+    const favourites = JSON.parse(localStorage.getItem('favourites') ?? '[]');
     const filteredMovies = movies.map((movie) => {
-      const isCurrFav = favourites?.find((fav) => fav === movie.id);
+      const isCurrFav = favourites?.find((fav: number) => fav === movie.id);
       if (isCurrFav) {
         return { ...movie, isFavorite: true };
       }
@@ -18,11 +17,10 @@ const MovieCards = ({ movies }: MovieCardsProps) => {
     setFilteredMovies(filteredMovies);
   }, [movies]);
 
-  const addToFavourite = (id) => {
-    console.log({ id });
-    let favourites = JSON.parse(localStorage.getItem('favourites')) ?? [];
+  const addToFavourite = (id: number) => {
+    let favourites = JSON.parse(localStorage.getItem('favourites') ?? '[]');
     if (favourites.includes(id)) {
-      favourites = favourites?.filter((fav) => fav !== id);
+      favourites = favourites?.filter((fav: number) => fav !== id);
     } else {
       favourites.push(id);
     }
@@ -39,7 +37,6 @@ const MovieCards = ({ movies }: MovieCardsProps) => {
     setFilteredMovies(filteredMovies);
   };
 
-  console.log({ filteredMovies });
   return (
     <main className="max-w-6xl mx-auto p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

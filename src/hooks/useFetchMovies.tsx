@@ -36,7 +36,7 @@ const useFetchMovies = () => {
       if (error instanceof Error) {
         setError(error.message);
       } else {
-        setError(error);
+        setError(String(error));
       }
     } finally {
       setLoading(false);

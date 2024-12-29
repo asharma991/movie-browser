@@ -13,9 +13,7 @@ const Header = ({
   const [showFilters, setShowFilters] = useState(false);
 
   const handleGenreToggle = (genre: Genre) => {
-    const currentGenre = filters.genres.find(
-      (i: Genre) => i.id === genre.id
-    )?.id;
+    const currentGenre = filters.genres.find((i: Genre) => i.id === genre.id);
     if (currentGenre) {
       setFilters((prev: Filter) => ({
         ...prev,
@@ -29,7 +27,7 @@ const Header = ({
     }
   };
 
-  const handleYearRangeChange = (value, bound) => {
+  const handleYearRangeChange = (value: string, bound: string) => {
     setFilters((prev: Filter) => ({
       ...prev,
       yearRange: {
@@ -39,7 +37,7 @@ const Header = ({
     }));
   };
 
-  const handleRatingRangeChange = (value, bound) => {
+  const handleRatingRangeChange = (value: string, bound: string) => {
     setFilters((prev: Filter) => ({
       ...prev,
       ratingRange: {
@@ -112,7 +110,7 @@ const Header = ({
                   key={genre.id}
                   onClick={() => handleGenreToggle(genre)}
                   className={`px-3 py-1 rounded-full text-sm ${
-                    filters.genres.find((i: Genre) => i.id === genre.id)?.id
+                    filters.genres.find((i: Genre) => i.id === genre.id)
                       ? 'bg-blue-600 text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
