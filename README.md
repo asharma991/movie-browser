@@ -22,3 +22,13 @@ bun dev
 ## Design Decisions
 
 Tailwind CSS has been used in order to maintain customization. A very simple but crispy theme has been used in order to have good user insteractions.
+
+## Additional Information
+
+Debounce used here is custom and the infinite scroll with page change is custom made.
+
+## Scope for improvement
+
+- Custom components can be added for inputs and buttons.
+- Both Dark/Light themes should be there.
+- A detailed page should be added for each movie.
