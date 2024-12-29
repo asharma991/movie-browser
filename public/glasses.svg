@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Face shape -->
+  <path d="M100 200 Q200 300 300 200" fill="none" stroke="#8B6F54" stroke-width="3"/>
+  
+  <!-- Glasses -->
+  <g fill="none" stroke="black" stroke-width="4">
+    <!-- Left lens -->
+    <ellipse cx="160" cy="180" rx="45" ry="40"/>
+    <!-- Right lens -->
+    <ellipse cx="240" cy="180" rx="45" ry="40"/>
+    <!-- Bridge -->
+    <path d="M205 180 H195"/>
+    <!-- Temple pieces -->
+    <path d="M115 180 L95 170"/>
+    <path d="M285 180 L305 170"/>
+  </g>
+  
+  <!-- Nose -->
+  <path d="M190 180 Q200 220 210 180" fill="none" stroke="#8B6F54" stroke-width="3"/>
+  
+  <!-- Smile -->
+  <path d="M160 250 Q200 280 240 250" fill="none" stroke="#8B6F54" stroke-width="3"/>
+</svg>
